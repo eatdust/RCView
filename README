@@ -1,0 +1,8 @@
+This is a skeleton addon. Use this as a simple start for your own FlightGear 
+Addon. 
+
+The following files are optional and included for illustration only,
+you can safely delete them if you don't need them in your addon:
+
+addon-menubar-items.xml
+gui/dialogs/*
