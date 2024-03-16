@@ -1,8 +1,11 @@
-This is a skeleton addon. Use this as a simple start for your own FlightGear 
-Addon. 
+RCView is a flightgear addon setting-up a new view which mimics
+the vision of a pilot remote controlling a plane.
 
-The following files are optional and included for illustration only,
-you can safely delete them if you don't need them in your addon:
+The RC pilot looks at the plane at all times and remains
+still. A configuration menu allows you to set your height and
+the distance at which you start remote controlling the target.
 
-addon-menubar-items.xml
-gui/dialogs/*
+During the flight, you can however jump to another location
+nearby the plane by pressing Alt-V under the RC View. This might
+be useful if you have miserably lost sight of your model or
+shamelessly crashed it in a nearby field.
