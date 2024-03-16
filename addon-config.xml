@@ -26,15 +26,50 @@ along with FlightGear.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <PropertyList>
-    <addons>
-        <by-id>
-            <org.flightgear.addons.Skeleton>
-                <addon-devel>
-                    <foo type="int">1</foo>
-                    <bar type="bool">false</bar>
-                    <my-prop>sample</my-prop>
-                </addon-devel>
-            </org.flightgear.addons.Skeleton>
-        </by-id>
-    </addons>
+  <addons>
+    <by-id>
+      <org.flightgear.addons.RCView>
+        <addon-devel>
+        </addon-devel>
+      </org.flightgear.addons.RCView>
+    </by-id>
+  </addons>
+
+  <input>
+
+    <keyboard>
+      <key n="118">
+	<name>Alt-V</name>
+	<desc>Jump to another RC Viewer location</desc>
+	<mod-alt>
+	  <binding>
+	    <command>nasal</command>
+	    <script>rcview.pilot.reset();</script>
+	  </binding>
+	</mod-alt>
+      </key>
+    </keyboard>
+
+  </input>
+
+  
+  <sim>
+    <view n="222">
+      <name>RC View</name>
+      <enabled type="bool">true</enabled>
+      <type>lookat</type>
+      <config>
+	<eye-fixed type="bool">true</eye-fixed>
+	<from-model type="bool">false</from-model>
+	<at-model type="bool">true</at-model>
+	<eye-lon-deg-path>/sim/rcviewer/longitude-deg</eye-lon-deg-path>
+        <eye-lat-deg-path>/sim/rcviewer/latitude-deg</eye-lat-deg-path>
+        <eye-alt-ft-path>/sim/rcviewer/altitude-ft</eye-alt-ft-path>
+	<default-field-of-view-deg type="double">60</default-field-of-view-deg>       
+      </config>
+    </view>
+  </sim>
+
+  
+
 </PropertyList>

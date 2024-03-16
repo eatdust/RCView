@@ -44,5 +44,20 @@ var unload = func(addon) {
 }
 
 var main = func(addon) {
-  logprint(LOG_INFO, "Skeleton addon initialized from path ", addon.basePath);
+    
+    logprint(LOG_INFO, "RCView addon initialized from path ", addon.basePath);
+    io.load_nasal(addon.basePath ~ "/Nasal/rcview.nas");
+
+
+    rcview.pilot.init();
+    
+    setlistener("/sim/current-view/name", func(name) {
+	var viewname = name.getValue();
+	if(viewname == 'RC View')
+	{
+	    rcview.pilot.reset(); 
+	    rcview.pilot.update();
+	}
+		});
+    
 }

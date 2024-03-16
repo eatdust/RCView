@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file requires FlightGear version 2018.2 or newer -->
+<PropertyList>
+  <name>pilot-options</name>
+  <layout>vbox</layout>
+  <modal>false</modal>
+  
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>1</stretch></empty>
+    <text>
+      <label>Pilot Settings</label>
+    </text>
+    <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+  </group>
+  <hrule/>
+  
+  <text>
+    <halign>center</halign>
+    <label>Anthropometry</label>
+  </text>
+
+  <group>
+    <layout>table</layout>
+    
+    <text>
+      <row>0</row>
+      <col>0</col>
+      <halign>center</halign>
+      <label>Height</label>
+    </text>
+    
+    <text>
+      <row>0</row>
+      <col>1</col>
+      <halign>center</halign>
+      <label>1.80m</label>
+      <format>%2.2fm</format>
+      <live>true</live>
+      <property>/sim/rcviewer/height-m</property>
+    </text>
+        
+    <slider>
+      <row>0</row>
+      <col>2</col>
+      <pref-width>200</pref-width>
+      <value>1.70</value>
+      <min>0.9</min>
+      <max>2.6</max>
+      <step>0.05</step>      
+      <live>true</live>
+      <property>/sim/rcviewer/height-m</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>      
+    </slider>
+
+
+  </group>
+
+
+  
+  <hrule/>
+
+  <text>
+    <halign>center</halign>
+    <label>Placement</label>
+  </text>
+
+  <group>
+    <layout>table</layout>
+    <text>
+      <row>0</row>
+      <col>0</col>
+      <label>Radius</label>
+    </text>
+
+    <text>
+      <row>0</row>
+      <col>1</col>
+      <halign>center</halign>
+      <label>10.0m</label>
+      <format>%2.1fm</format>
+      <live>true</live>
+      <property>/sim/rcviewer/radius-m</property>
+    </text>
+
+    <slider>
+      <row>0</row>
+      <col>2</col>
+      <pref-width>200</pref-width>
+      <value>10.0</value>
+      <min>0.5</min>
+      <max>50.0</max>      
+      <step>0.5</step>
+      <live>true</live>
+      <property>/sim/rcviewer/radius-m</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </slider>
+  </group>
+    
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+
+    <button>
+      <row>0</row>
+      <col>0</col>
+      <legend>Apply</legend>
+      <default>true</default>
+      <key>Alt-V</key>
+      <binding>
+	<command>nasal</command>
+	<script>
+	  rcview.pilot.reset();
+	</script>
+      </binding>
+    </button>
+    
+    
+    <button>
+      <row>0</row>
+      <col>1</col>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+	<command>dialog-close</command>
+      </binding>
+    </button>
+
+
+  </group>
+  
+</PropertyList>
