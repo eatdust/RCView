@@ -6,6 +6,6 @@ still. A configuration menu allows you to set your height and
 the distance at which you start remote controlling the target.
 
 During the flight, you can however jump to another location,
-extrapolated to be nearby the plane, by pressing Alt-V while the
-"RC View". This might be useful if you have miserably lost sight of
-your model or shamelessly crashed it in a nearby field.
+extrapolated to be nearby the plane, by pressing Alt-V while the "RC
+View" is active. This might be useful if you have miserably lost sight
+of your model or shamelessly crashed it in a nearby field.
